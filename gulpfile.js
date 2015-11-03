@@ -1,6 +1,7 @@
 var gulp        = require('gulp'),
     sass        = require('gulp-sass'),
     minifyCSS   = require('gulp-minify-css'),
+    minifyJS    = require('gulp-minify');
     prefixer    = require('gulp-autoprefixer'),
     ghPages     = require('gulp-gh-pages'),
     img         = require('gulp-imagemin'),
@@ -29,6 +30,7 @@ gulp.task('html', function() {
 gulp.task('js', function() {
   return gulp
   .src('./src/js/*')
+  .pipe(minifyJS())
   .pipe(gulp.dest('./build/assets/js/'));
 });
 
