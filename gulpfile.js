@@ -6,7 +6,7 @@ var gulp        = require('gulp'),
     img         = require('gulp-imagemin'),
     minifyHTML = require('gulp-minify-html');
 
-gulp.task ('default', ['styles', 'img', 'html']);
+gulp.task ('default', ['styles', 'img', 'html', 'js']);
 
 gulp.task ('styles', function () {
   return gulp
@@ -24,6 +24,12 @@ gulp.task('html', function() {
   .src('./src/html/*')
   .pipe(minifyHTML())
   .pipe(gulp.dest('./build/'));
+});
+
+gulp.task('js', function() {
+  return gulp
+  .src('./src/js/*')
+  .pipe(gulp.dest('./build/assets/js/'));
 });
 
 gulp.task('img', function() {

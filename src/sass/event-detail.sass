@@ -1,0 +1,266 @@
+@import "neutra"
+@import "medias"
+
+$grey: #343433
+$blackBlue: #0367cb
+$yellow: darken(#F9E034, 5%)
+$black: rgb(31, 31, 31)
+
+
+$transitionTime: .15s
+
+%stretch
+  position: absolute
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  margin: auto
+
+*
+  padding: 0
+  margin: 0
+
+body, html
+  width: 100%
+  height: 100%
+
+body
+  background: url('../img/gs.jpg') no-repeat center center fixed
+  background-size: cover
+  background-color: $grey
+  font-family: 'Cabin', sans-serif
+  color: $grey
+
+ul
+  list-style: none
+
+.centering
+  text-align: center
+
+a.button
+  color: $grey
+  text-decoration: none
+  border: solid 1px $grey
+  border-radius: 0.2em
+  padding: 0.5em 4.5em
+  box-sizing: border-box
+  transition: all .2s linear
+  line-height: 3.5em
+  cursor: pointer
+
+  &.big
+    font-size: 1.7em
+
+  &:hover
+    background: $grey
+    color: #fff
+
+%triangle
+  $size: 2em
+  width: 0
+  height: 0
+  border-top: $size solid transparent
+  border-right: $size solid transparent
+  border-bottom: $size solid $yellow
+
+h1, h2
+  @extend .centering
+  font-family: 'Roboto Slab', sans-serif
+  font-size: 2.0em
+  margin-bottom: 0.6em
+.logo
+  float: left
+  position: absolute
+  margin: 10px
+  line-height: 0px
+  cursor: pointer
+  img
+    width: 16em
+
+section
+  position: relative
+  box-sizing: border-box
+  width: 100%
+  z-index: 5
+  &.header
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    color: #fff
+    z-index: 1000
+    height: 130px
+    overflow: hidden
+    -webkit-transition: height $transitionTime
+    -moz-transition: height $transitionTime
+    transition: height $transitionTime
+    text-align: center
+    line-height: 130px
+    &.shrink
+      height: 80px
+      line-height: 80px
+      h1
+        font-size: 24px;
+        -webkit-transition: all $transitionTime
+        -moz-transition: all $transitionTime
+        transition: all $transitionTime
+    h1
+      font-size: 30px
+      font-weight: normal
+      -webkit-transition: all $transitionTime
+      -moz-transition: all $transitionTime
+      transition: all $transitionTime
+    &.translucent
+      background: rgba($grey, 0.8)
+      color: #fff
+  &.content
+
+section#timeline
+  width: 80%
+  margin: 0px auto
+  position: relative
+  margin-top: 10%
+  padding: 20px
+  &:before
+    content: ''
+    display: block
+    position: absolute
+    left: 50%
+    top: 0
+    margin: 0 0 0 -1px
+    width: 2px
+    height: 100%
+    background: rgba(255, 255, 255, 0.7)
+  article
+    width: 100%
+    margin: 0 0 20px 0
+    position: relative
+    &:after
+      content: ''
+      display: block
+      clear: both
+    div.inner
+      width: 40%
+      float: left
+      margin: 5px 0 0 0
+      border-radius: 6px
+      span.time
+        display: block
+        width: 60px
+        height: 50px
+        padding: 5px 0
+        position: absolute
+        top: 0
+        left: 50%
+        margin: 0 0 0 -32px
+        border-radius: 100%
+        font-size: 12px
+        font-weight: 900
+        background: #425569
+        color: rgba(255, 255, 255, 0.7)
+        border: 2px solid rgba(255, 255, 255, 0.5)
+        box-shadow: 0 0 0 7px #25303B
+        span
+          display: block
+          text-align: center
+          &.hour
+            margin-top: 15px
+            font-size: 18px
+          &.minute
+            font-size: 10px
+      h2
+        padding: 15px
+        margin: 0
+        color: #fff
+        font-size: 20px
+        text-transform: uppercase
+        letter-spacing: -1px
+        border-radius: 6px 6px 0 0
+        position: relative
+        &:after
+          content: ''
+          position: absolute
+          top: 20px
+          right: -5px
+          width: 10px
+          height: 10px
+          -webkit-transform: rotate(-45deg)
+      p
+        padding: 15px
+        margin: 0
+        font-size: 14px
+        background: #fff
+        color: #656565
+        border-radius: 0 0 6px 6px
+    &:nth-child(2n+2) div.inner
+      float: right
+      h2:after
+        left: -5px
+    &:nth-child(1) div.inner h2
+      background: #e74c3c
+      &:after
+        background: #e74c3c
+    &:nth-child(2) div.inner h2
+      background: #2ecc71
+      &:after
+        background: #2ecc71
+    &:nth-child(3) div.inner h2
+      background: #e67e22
+      &:after
+        background: #e67e22
+    &:nth-child(4) div.inner h2
+      background: #1abc9c
+      &:after
+        background: #1abc9c
+    &:nth-child(5) div.inner h2
+      background: #9b59b6
+      &:after
+        background: #9b59b6
+    &:nth-child(6) div.inner h2
+      background: #c92994
+      &:after
+        background: #c92994
+    &:nth-child(7) div.inner h2
+      background: #54a3ff
+      &:after
+        background: #54a3ff
+    &:nth-child(8) div.inner h2
+      background: #a89d00
+      &:after
+        background: #a89d00
+section.info
+  background: rgba($blackBlue, 0.8)
+  h2
+    color: $yellow
+article
+  position: relative
+  z-index: 6
+  &.text
+    color: #fff;
+    font-weight: 300
+    font-size: 1.4em
+    text-align: center
+    b
+      color: rgb(222, 222, 222)
+  &.map
+    text-align: center
+
+section.support
+  background: rgba($black, 0.9)
+  display: inline-block
+  margin-left: auto
+  margin-right: auto
+  text-align: center
+  h3
+    color: #fff
+    font-weight: 700
+    font-size: 1.8em
+    text-align: left
+    padding-left: 20px
+    padding-top: 20px
+    padding-bottom: 10px
+  img
+    margin: 0 30px 30px 30px;
+    text-align: center
+    width: 100px

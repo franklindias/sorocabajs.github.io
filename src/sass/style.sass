@@ -1,6 +1,8 @@
 @import "neutra"
 @import "medias"
 
+$small-desktop: "(min-width: 1200px) and (max-width: 1380px)";
+
 $grey: #343433
 $yellow: darken(#F9E034, 5%)
 
@@ -62,8 +64,12 @@ a.button
 h1, h2
   @extend .centering
   font-family: 'Roboto Slab', sans-serif
-  font-size: 2.5em
-  margin-bottom: 1.5em
+  font-size: 2.0em
+  margin-bottom: 0.6em
+
+@media (min-width: 700px) and (max-width: 1380px)
+    h1
+        font-size: 1.8em;
 
 section
   float: left
@@ -78,7 +84,7 @@ section
     color: #fff
 
   &.opaque
-    $big: 70%
+    $big: 60%
     padding: 2.5%
 
     &.yellow
@@ -101,6 +107,38 @@ section
       font-size: 1.3em
       margin: 0 auto
       margin-bottom: 2em
+
+.button
+  flex: 1 1 auto
+  margin: 10px
+  padding: 20px
+  border: 8px solid #f7f7f7
+  text-align: center
+  text-transform: uppercase
+  position: relative
+  overflow:hidden
+  transition: .1s
+  &.sjs
+    float: right
+    width: 50%
+  &:after
+    position: absolute
+    transition: .1s
+    content: ''
+    width: 0
+    left: 50%
+    bottom: 0
+    height: 3px
+    background: #f7f7f7
+  &:hover
+    cursor: pointer
+    &:after
+      width: 100%
+      left: 0
+    &.sjs
+      box-shadow: inset 0px 0px 0px 3px #f7f7f7
+    &.sjs:after
+      width: 0%
 
 .links
   width: 100%
@@ -131,3 +169,55 @@ section
   img
     width: 100%
     margin-bottom: 2em
+
+ul
+  list-style: none
+  float: left;
+  padding: 0
+  margin: 0
+  li
+    display: inline-block
+    width: 120px
+    margin: 10px
+
+time.icon
+  display: block
+  position: relative
+  width: 100%
+  height: 100%
+  background-color: #fff
+  margin: 0
+  border-radius: 4px
+  -webkit-border-radius: 4px
+  -moz-border-radius: 4px
+  overflow: hidden
+  *
+    display: block
+    width: 100%
+    font-weight: 700
+    font-style: normal
+    text-align: center
+  .month
+    text-transform: uppercase
+    font-size: 14px
+    color: #fff
+    background-color: rgba(0, 0, 0, 0.3)
+    padding: 7px 0
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8)
+  .day
+    font-size: 28px
+    color: #fff
+    padding: 0
+    padding-top: 10px
+  .week
+    font-size: 12px
+    line-height: 16px
+    color: #fff
+    padding: 5px 0
+    padding-bottom: 10px
+
+.icon
+    &.saturday
+    	background-color: #1488c8
+        box-shadow: 0 1px 0 #1488c8,0 2px 0 #fff,0 3px 0 #1488c8,0 4px 0 #fff,0 5px 0 #1488c8,0 0 0 1px #fff
+        color: #fff !important
